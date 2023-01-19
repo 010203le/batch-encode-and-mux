@@ -1,6 +1,10 @@
 # batch-encode-and-mux
 
-It can create batch.bat for batch encode and mux the video with source's audio, subs, chapters ...
+It can create `batch.vpy` and `batch.bat` for batch encode and mux the video with source's audio, subs, chapters ...
+
+batch.vpy : scripts with every episode.
+
+batch.bat : batch encode and mux.
 
 # usage
 1. Copy `main.py` and open it to set your own path and encoder command.
