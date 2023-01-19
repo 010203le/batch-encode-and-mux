@@ -17,4 +17,4 @@ batch.bat : batch encode and mux.
 
 4. run `batch.bat`. 
 
-#### Tips : You need add `#BATCH` into vpy , check `example.vpy` to know how to do it.
+#### Tips : You need add `#BATCH` into vpy , check `example.vpy` to know how to do it. Only for .mkv source files
