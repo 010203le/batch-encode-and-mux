@@ -28,13 +28,14 @@ with open(vpyPath, 'r') as f:
 
 for i in range(mkvCount):
     batList.append('"'+VSPipe+'"'+' "'+os.path.join(temp, 'batch'+str(i+1)+'.vpy')+'" - --y4m | '+'"'+x265+'" '+x265P+' --y4m --output "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -')
-    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D "'+mkvList[i]+'" "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -s 0 --language 0:jp --track-name 0:"lolice-EC" --default-duration 0:24000/1001p')
+    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D "'+mkvList[i]+'" "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -s 0 --language 0:jpn --track-name 0:"encode" --default-duration 0:24000/1001p')
     with open(os.path.join(temp, 'batch'+str(i+1)+'.vpy'), 'w') as f:
         f.write(vpy[0]+'\na=r"'+mkvList[i]+'"'+vpy[2])
         f.close()
         i=i+1
 
 with open( 'batch.bat', 'w') as f:
+    f.write('@echo off\n')
     for i in range(mkvCount):
         f.write(batList[i]+'\n')
         f.write(mergeList[i]+'\n')
