@@ -9,6 +9,7 @@ x265P = '--crf 14.5 --preset slower --tune lp++ --output-depth 10 --profile main
 VSPipe = r"C:\PT\XX\vapoursynth-R57.A6\VSPipe.exe"
 mkvMerge = r"C:\PT\XX\mkvtoolnix-64-bit-73.0.0\mkvmerge.exe"
 
+
 mkvCount = 0
 mkvList = []
 batList = []
@@ -27,7 +28,7 @@ with open(vpyPath, 'r') as f:
 
 for i in range(mkvCount):
     batList.append('"'+VSPipe+'"'+' "'+os.path.join(temp, 'batch'+str(i+1)+'.vpy')+'" - --y4m | '+'"'+x265+'" '+x265P+' --y4m --output "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -')
-    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -A -D -S "'+mkvList[i]+'" -s 0 -d 0 -a 1 -T -S "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -s 1 -D -A -T --language 0:jp --track-name 0:"lolice-EC" --default-duration 0:24000/1001p')
+    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D "'+mkvList[i]+'" "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -s 0 --language 0:jp --track-name 0:"lolice-EC" --default-duration 0:24000/1001p')
     with open(os.path.join(temp, 'batch'+str(i+1)+'.vpy'), 'w') as f:
         f.write(vpy[0]+'\na=r"'+mkvList[i]+'"'+vpy[2])
         f.close()
