@@ -3,7 +3,7 @@
 It can create batch.bat for batch encode and muxing
 
 # usage
-1. Copy `main.py`and set your own path and x265P (x265 command).
+1. Copy `main.py`and set your own path and x265P (encoder command).
 
 2. Run `main.py` .
 
