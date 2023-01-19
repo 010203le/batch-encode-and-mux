@@ -35,7 +35,7 @@ for i in range(mkvCount):
     batList.append('"'+VSPipe+'"'+' "'+os.path.join(temp, 'batch'+str(i+1)+'.vpy')+'" - --y4m | '+'"'+x265+'" '+x265P+' --y4m --output "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -')
     mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D "'+mkvList[i]+'" "'+os.path.join(temp, 'batch'+str(i+1)+'_out.hevc')+'" -s 0 --language 0:"' + videoLang + '" --track-name 0:"' + trackName + '" --default-duration 0:'+fps)
     with open(os.path.join(temp, 'batch'+str(i+1)+'.vpy'), 'w') as f:
-        f.write(vpy[0]+'\na=r"'+mkvList[i]+'"'+vpy[2])
+        f.write(vpy[0]+'\na=r"'+mkvList[i]+'"\n'+vpy[2])
         f.close()
         i=i+1
 
