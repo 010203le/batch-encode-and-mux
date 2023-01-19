@@ -38,4 +38,5 @@ with open( 'batch.bat', 'w') as f:
         f.write(batList[i]+'\n')
         f.write(mergeList[i]+'\n')
         i=i+1
+    f.write('\npause')
     f.close()
