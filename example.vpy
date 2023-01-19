@@ -1,10 +1,6 @@
 import vapoursynth as vs
 core = vs.core
-import kagefunc as kgf
-import fvsfunc as fvf
-import mvsfunc as mvf
-import vsTAAmbk as taa
-import havsfunc as haf
+
 
 #BATCH
 a = r""
