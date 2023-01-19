@@ -2,6 +2,8 @@
 
 It can create `batch.vpy` and `batch.bat` for batch encode and mux the video with source's audio, subs, chapters ...
 
+# Output
+
 batch.vpy : scripts with every episode.
 
 batch.bat : batch encode and mux.
