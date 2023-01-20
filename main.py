@@ -5,10 +5,10 @@ mkvPath = r"C:\PT\XX\_source"
 outPath = r"C:\PT\XX\_encode"
 vpyPath = r"C:\PT\XX\main.vpy"
 temp = r"C:\PT\XX\_temp"
-x265 = r"C:\PT\XX\x265.exe"
+x265 = r"C:\PT\XX\bin\x265.exe"
 x265P = '--crf 14.5 --preset slower --tune lp++ --output-depth 10 --profile main10 --level-idc 4.1 --rd 5 --psy-rd 1.8 --rskip 0 --ctu 32 --limit-tu 2 --cutree-strength 1.75 --no-rect --no-amp --aq-mode 5 --qg-size 8 --aq-strength 0.8 --qcomp 0.65 --cbqpoffs -2 --crqpoffs -2 --vbv-bufsize 30000 --vbv-maxrate 30000 --pbratio 1.2 --hme-range 16,24,40 --merange 38 --bframes 8 --rc-lookahead 60 --ref 4 --min-keyint 1 --no-open-gop --deblock -1:-1 --no-sao --no-strong-intra-smoothing'
 VSPipe = r"C:\PT\XX\vapoursynth-R57.A6\VSPipe.exe"
-mkvMerge = r"C:\PT\XX\mkvtoolnix-64-bit-73.0.0\mkvmerge.exe"
+mkvMerge = r"C:\PT\XX\bin\mkvtoolnix-64-bit-73.0.0\mkvmerge.exe"
 
 #output video track information setup
 trackName = 'lolice-EC'
