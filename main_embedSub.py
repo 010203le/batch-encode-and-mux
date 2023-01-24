@@ -42,7 +42,7 @@ with open(vpyPath, 'r') as f:
 
 for i in range(mkvCount):
     batList.append('"'+VSPipe+'"'+' "'+os.path.join(temp, 'batch'+str(i+1)+'.vpy')+'" - --y4m | '+'"'+x264+'" '+x264P+' --demuxer y4m -o "'+os.path.join(temp, 'batch'+str(i+1)+'_out.avc')+'" -')
-    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D -S -T -M "'+mkvList[i]+'" "'+os.path.join(temp, 'batch'+str(i+1)+'_out.avc')+'" --language 0:"' + videoLang + '" --track-name 0:"' + trackName + '" --default-duration 0:'+fps)
+    mergeList.append('"'+mkvMerge+'" -o "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -D -S -T -M "'+mkvList[i]+'" "'+'" --language 0:"' + videoLang + '" --track-name 0:"' + trackName + '" --default-duration 0:'+fps + os.path.join(temp, 'batch'+str(i+1)+'_out.avc'))
     ffmpegList.append('"'+ffmpeg+'" -i "'+os.path.join(outPath, 'batch'+str(i+1)+'_out.mkv')+'" -c copy "'+os.path.join(outPath, 'batch'+str(i+1))+'_out.mp4'+'"')
     with open(os.path.join(temp, 'batch'+str(i+1)+'.vpy'), 'w') as f:
         f.write(vpy[0]+'\na=r"'+mkvList[i]+'"\ns=r"'+subList[i]+'"\n'+vpy[2])
